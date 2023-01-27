@@ -1,0 +1,42 @@
+<h3>NgIf</h3>
+<p *ngIf="isShown; else elseBlock">TRUE</p>
+<ng-template #elseBlock>
+    <p>FALSE</p>
+</ng-template>
+
+<hr>
+
+<p *ngIf="toggleButton"> TRUE </p>
+<p *ngIf="!toggleButton"> FALSE </p>
+<button (click)="onClick()">CLICAR</button>
+
+<br>
+<br>
+<hr>
+<hr>
+
+<h3>NgFor</h3>
+
+<ul>
+    <li *ngFor="let item of iterationList; let i = index" (click)="onItemClick($event, i)" >
+        <b>[ {{i + 1}} ]</b> Nome: {{item.nome}}, idade = {{item.idade}}
+    </li>
+</ul>
+<button (click)="pushToList()">Adicionar o Rodrigo</button>
+
+<br>
+<br>
+<hr>
+<hr>
+<h3>NgSwitch</h3>
+
+<input type="text" [(ngModel)]="switchName" >
+
+<div [ngSwitch]="switchName"> 
+
+    <p *ngSwitchCase="'Ricardo'">Ricardo</p>
+    <p *ngSwitchCase="'Deborah'">Deborah</p>
+    <p *ngSwitchCase="'Belo'">Belo</p>
+    <p *ngSwitchDefault="">Ricardo ou Deborah ou Belo</p>
+
+</div>

@@ -1,0 +1,49 @@
+<h2>atribute-directives</h2>
+<h3>NgClass</h3>
+<p [ngClass]="{'active': toggleClass, 'disabled': !toggleClass}">atribute-directives works!</p>
+
+<hr>
+
+<h3>NgStyle</h3>
+<p [ngStyle]="{'width': width, 'background': background}">atribute-directives works!</p>
+
+<hr>
+
+<h3>NgModel</h3>
+<input type="text" [(ngModel)]="name">
+
+<button (click)="save()">Salvar</button>
+
+<li *ngFor="let item of forList">{{item.name}}</li>
+
+<hr>
+
+<h3>NgTemplate</h3>
+
+<!-- Esta forma de for é mais inteligente e performatva do que usar um for em uma lista vazia com o
+     NgFor diretamente em um elemento qualquer -->
+<ng-template ngFor let-item [ngForOf]="[1, 2, 3]">
+    <p>{{item}}</p>
+</ng-template>
+
+<hr>
+
+<h3>NgContent</h3>
+
+<!-- RECEBE CHILDREN -->
+<!-- Se atribuida o atributo select, recebe especificamente os elementos-->
+<ng-content select="hr"></ng-content>
+
+<ng-content></ng-content>
+<!-- Se vazio, recebe os children restantes diretamente aqui -->
+<ng-content></ng-content>
+
+
+
+<hr>
+
+<h3>Pipes</h3>
+
+<li *ngFor="let item of ['a', 'b', 'c']"> {{item | uppercase}} </li>
+<br>
+{{date | date: 'dd MMMM yyyy'}} --- {{date | date: 'dd/MM/yy'}}
