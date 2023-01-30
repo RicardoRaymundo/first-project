@@ -14,14 +14,17 @@ import {
     </app-atribute-directives> -->
 <!-- 
     <app-input [counter]="counter"></app-input>
-    <button (click)="add()">Add</button> -->
+    <button (click)="add()">Add</button> 
     
 
     <ng-template [ngIf]='data'>
       <h1> {{data.name}} </h1>
       <h2> {{data.age}} </h2>
     </ng-template>
-    <app-output (sendData)="setData($event)"></app-output>
+    <app-output (sendData)="setData($event)"></app-output>-->
+
+    <app-food-add></app-food-add>
+    <app-food-list></app-food-list>
 
     <router-outlet></router-outlet>
     `,
